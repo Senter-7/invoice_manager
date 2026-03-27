@@ -101,7 +101,7 @@ export function Header({
                     className={cn(
                       "flex items-center gap-2 px-6 py-2 rounded-full text-xs font-bold transition-all duration-300",
                       isActive
-                        ? "bg-[#00E5BC] text-background"
+                        ? "bg-primary text-primary-foreground"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                     )}
                   >

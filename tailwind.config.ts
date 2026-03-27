@@ -117,8 +117,8 @@ export default {
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
         "pulse-glow": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(175 84% 45% / 0.2)" },
-          "50%": { boxShadow: "0 0 40px hsl(175 84% 45% / 0.4)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(217 91% 60% / 0.2)" },
+          "50%": { boxShadow: "0 0 40px hsl(217 91% 60% / 0.4)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
@@ -149,7 +149,7 @@ export default {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "glass-gradient": "linear-gradient(135deg, hsl(222 47% 12% / 0.8), hsl(222 47% 8% / 0.9))",
-        "shimmer-gradient": "linear-gradient(90deg, transparent, hsl(175 84% 45% / 0.1), transparent)",
+        "shimmer-gradient": "linear-gradient(90deg, transparent, hsl(217 91% 60% / 0.1), transparent)",
       },
     },
   },

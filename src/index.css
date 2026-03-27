@@ -17,8 +17,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Teal/Cyan accent - trust, data, intelligence */
-    --primary: 175 84% 35%;
+    /* Blue accent - trust, data, intelligence */
+    --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
 
     /* Muted navy for secondary surfaces */
@@ -28,8 +28,8 @@
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    /* Teal accent for highlights */
-    --accent: 175 70% 40%;
+    /* Blue accent for highlights */
+    --accent: 217 80% 60%;
     --accent-foreground: 222 47% 11%;
 
     /* Warning amber */
@@ -46,7 +46,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 175 84% 35%;
+    --ring: 217 91% 60%;
 
     --radius: 1rem;
 
@@ -63,7 +63,7 @@
     --chart-positive: 152 69% 35%;
     --chart-negative: 0 84.2% 50%;
     --chart-neutral: 220 14% 50%;
-    --chart-line: 175 84% 45%;
+    --chart-line: 217 91% 60%;
 
     /* Sidebar - matching glass aesthetic */
     --sidebar-background: 0 0% 98%;
@@ -88,9 +88,10 @@
     --popover: 222 47% 12%;
     --popover-foreground: 210 40% 98%;
 
-    /* Teal/Cyan accent - trust, data, intelligence */
-    --primary: 175 84% 45%;
-    --primary-foreground: 222 47% 6%;
+    /* Blue accent - trust, data, intelligence */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    /* Keep primary-foreground light for better contrast on vivid blue */
 
     /* Muted navy for secondary surfaces */
     --secondary: 222 30% 16%;
@@ -99,8 +100,8 @@
     --muted: 222 25% 14%;
     --muted-foreground: 215 20% 55%;
 
-    /* Teal accent for highlights */
-    --accent: 175 70% 40%;
+    /* Blue accent for highlights */
+    --accent: 217 80% 60%;
     --accent-foreground: 210 40% 98%;
 
     /* Warning amber */
@@ -117,7 +118,7 @@
 
     --border: 222 30% 18%;
     --input: 222 30% 20%;
-    --ring: 175 84% 45%;
+    --ring: 217 91% 60%;
 
     /* Glass effect */
     --glass-bg: 222 47% 8% / 0.8;
@@ -132,17 +133,17 @@
     --chart-positive: 152 69% 45%;
     --chart-negative: 0 72% 55%;
     --chart-neutral: 220 14% 50%;
-    --chart-line: 175 84% 55%;
+    --chart-line: 217 91% 60%;
 
     /* Sidebar - matching glass aesthetic */
     --sidebar-background: 222 47% 8%;
     --sidebar-foreground: 210 30% 85%;
-    --sidebar-primary: 175 84% 45%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 222 47% 6%;
     --sidebar-accent: 222 30% 16%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 222 30% 18%;
-    --sidebar-ring: 175 84% 45%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -205,7 +206,7 @@
     inset: -1px;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(175 84% 45% / 0.5), hsl(175 84% 45% / 0.1), hsl(222 30% 25% / 0.3));
+    background: linear-gradient(135deg, hsl(217 91% 60% / 0.5), hsl(217 91% 75% / 0.1), hsl(222 30% 25% / 0.3));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
