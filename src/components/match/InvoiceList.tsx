@@ -117,7 +117,7 @@ export function InvoiceList({ onSelectInvoice, currentPage, onPageChange }: Invo
             Invoice Inbox
           </CardTitle>
           <Badge variant="outline" className="bg-primary/10 text-primary border-primary/20">
-            {invoiceData.length} Invoices Pending
+            {9} Invoices Pending
           </Badge>
         </div>
       </CardHeader>

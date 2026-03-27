@@ -79,8 +79,8 @@ export function Header({
       <div className="px-8 py-3">
         <div className="flex items-center justify-between h-14">
           <div className="flex items-center gap-4">
-            <div className="h-10 w-10 rounded-xl bg-[#00E5BC] flex items-center justify-center">
-              <Sparkles className="h-5 w-5 text-background" />
+            <div className="h-10 w-10 rounded-xl flex items-center justify-center">
+              <img src="/logo.svg" alt="Document Studio Logo"  />
             </div>
             <div className="flex flex-col">
               <h1 className="text-base font-bold text-foreground leading-tight tracking-tight">Document Studio</h1>
