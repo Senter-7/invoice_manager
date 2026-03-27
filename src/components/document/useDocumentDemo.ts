@@ -17,6 +17,26 @@ export function useDocumentDemo() {
     const [showSuccess, setShowSuccess] = useState(false);
     const fileInputRef = useRef<HTMLInputElement>(null);
 
+    const mapApiDataToTags = (data: ApiResponseData): AutoTag[] => {
+        const tags: AutoTag[] = [];
+        const { vendor_details, amount_details, items } = data;
+
+        if (vendor_details.vendor_name) {
+            tags.push({ tag: `vendor:${vendor_details.vendor_name.toLowerCase().replace(/\s+/g, '-')}`, accepted: true });
+        }
+        if (amount_details.currency) {
+            tags.push({ tag: `currency:${amount_details.currency.toLowerCase()}`, accepted: true });
+        }
+        if (amount_details.total_amount) {
+            tags.push({ tag: `amount:${amount_details.total_amount}`, accepted: true });
+        }
+        if (items && items.length > 0) {
+            tags.push({ tag: `items:${items.length}`, accepted: true });
+        }
+
+        return tags;
+    };
+
     const mapApiDataToFields = (data: ApiResponseData): ExtractedField[] => {
         const fields: ExtractedField[] = [];
         const { invoice_details, vendor_details, amount_details, customer_details } = data;
@@ -80,10 +100,12 @@ export function useDocumentDemo() {
         if (doc.extractedData) {
             setDisplayFields(mapApiDataToFields(doc.extractedData));
             setDisplayLineItems(mapApiItemsToLineItems(doc.extractedData.items));
+            setTags(mapApiDataToTags(doc.extractedData));
         } else {
             // For sample docs, use initial data
             setDisplayFields(initialExtractedFields);
             setDisplayLineItems(initialLineItems);
+            setTags(initialAutoTags);
         }
 
         toast.info(`Selected: ${doc.name}`);
@@ -213,6 +235,11 @@ export function useDocumentDemo() {
             setSelectedDoc(newDoc);
             setCurrentPage(1);
 
+            // Clear current display data while processing
+            setDisplayFields([]);
+            setDisplayLineItems([]);
+            setTags([]);
+
             toast.promise(extractDocumentData(file), {
                 loading: `Uploading and analyzing ${file.name}...`,
                 success: (response: ApiResponse) => {
@@ -232,6 +259,7 @@ export function useDocumentDemo() {
                     setSelectedDoc(updatedDoc);
                     setDisplayFields(extractedFields);
                     setDisplayLineItems(lineItems);
+                    setTags(mapApiDataToTags(response.data));
                     setCurrentPage(1);
 
                     return `${file.name} processed! Detected ${detectedPages} pages.`;

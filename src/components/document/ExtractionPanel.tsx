@@ -51,12 +51,18 @@ export function ExtractionPanel({
                 <div className="p-4 border-b border-border/50">
                     <div className="flex items-center justify-between mb-2">
                         <h3 className="font-semibold">Extracted Data</h3>
-                        <ConfidenceBadge value={94} size="md" />
+                        {selectedDoc.status === "processed" && <ConfidenceBadge value={94} size="md" />}
                     </div>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <span>{extractedFields.length} fields extracted</span>
-                        <span className="text-warning">• 1 needs review</span>
-                    </div>
+                    {selectedDoc.status === "processed" ? (
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                            <span>{extractedFields.length} fields extracted</span>
+                            <span className="text-warning">• 1 needs review</span>
+                        </div>
+                    ) : selectedDoc.status === "processing" ? (
+                        <div className="flex items-center gap-2 text-xs text-muted-foreground italic animate-pulse">
+                            <span>Analyzing document...</span>
+                        </div>
+                    ) : null}
                 </div>
 
                 {/* Fields */}
