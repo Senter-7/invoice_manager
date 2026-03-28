@@ -244,7 +244,7 @@ function LineItemDetailModal({ isOpen, onClose, data, index, highlights }: { isO
               <TableRow className="hover:bg-transparent border-border/50 h-8">
                 <TableHead className="h-8 text-[11px] font-semibold text-primary w-48">Field</TableHead>
                 <TableHead className="h-8 text-[11px] font-semibold text-primary border-l border-border/50">Purchase Order</TableHead>
-                <TableHead className="h-8 text-[11px] font-semibold text-primary border-l border-border/50">GRN</TableHead>
+                <TableHead className="h-8 text-[11px] font-semibold text-primary border-l border-border/50">Goods Received Note</TableHead>
                 <TableHead className="h-8 text-[11px] font-semibold text-primary border-l border-border/50">Invoice</TableHead>
               </TableRow>
             </TableHeader>
